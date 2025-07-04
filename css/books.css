@@ -1,0 +1,117 @@
+.books {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 30px;
+  box-sizing: content-box;
+}
+.books h2 {
+  margin: 40px 0 10px 0;
+  font-family: "Mulish", sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #252C21;
+}
+.books .subtitle {
+  margin: 0 0 30px 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #252C21;
+  text-transform: capitalize;
+}
+.books .packages {
+  position: relative;
+  width: 498.53px;
+  height: 197px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.books .packages .book-card {
+  position: absolute;
+}
+.books .packages .book-card img {
+  display: block;
+  width: 257.31px;
+  height: 192.98px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.books .packages .book-card img:hover {
+  transform: scale(1.05);
+}
+.books .packages .book-card:nth-child(1) {
+  left: -4px;
+  top: 4.02px;
+  z-index: 1;
+}
+.books .packages .book-card:nth-child(2) {
+  left: 105px;
+  top: 0px;
+  z-index: 2;
+}
+.books .packages .book-card:nth-child(3) {
+  left: 241.22px;
+  top: 4.02px;
+  z-index: 1;
+}
+.books .primary-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 255px;
+  height: 57px;
+  background: #8A2BE2;
+  border-radius: 4px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 40px;
+}
+.books .primary-btn:hover {
+  opacity: 0.9;
+}
+.books .footer-tagline {
+  margin: 30px auto 0 auto;
+  max-width: 304px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #252C21;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .books {
+    width: 768px;
+  }
+  .books .packages {
+    width: 768px;
+    height: 300px;
+    overflow: visible;
+  }
+  .books .packages .book-card img {
+    width: 180px;
+    height: auto;
+  }
+  .books .packages .book-card:nth-child(1) {
+    left: 50px;
+  }
+  .books .packages .book-card:nth-child(2) {
+    left: 250px;
+  }
+  .books .packages .book-card:nth-child(3) {
+    left: 450px;
+  }
+}
+
+/*# sourceMappingURL=books.css.map */

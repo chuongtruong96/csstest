@@ -1,0 +1,247 @@
+/* === Variables === */
+$primary-color: #7e00ff;
+$dark-color: #1d1d1d;
+$text-color: #333;
+$background-color: #f9f9f9;
+
+/* === Base === */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: $background-color;
+  color: $text-color;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* === Header === */
+.site-header {
+  .top-bar {
+    background: $dark-color;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .main-nav {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: $primary-color;
+    }
+
+    nav {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          margin: 0 10px;
+
+          a {
+            color: $text-color;
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        padding: 8px 12px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .login-btn {
+        background: #fff;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+
+        &:hover {
+          background: $primary-color;
+          color: #fff;
+        }
+      }
+
+      .open-account-btn {
+        background: $primary-color;
+        color: #fff;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+
+      .lang-select {
+        border: 1px solid #ddd;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+/* === Hero === */
+.hero {
+  position: relative;
+  width: 100%;
+  // max-width: 375px;
+  margin: 0 auto;
+  text-align: center;
+
+  .hero-images {
+    position: relative;
+    width: 375px;
+    height: 400px;
+
+    img:nth-child(1) {
+      position: absolute;
+      width: 321.89px;
+      height: 268.24px;
+      left: 1px;
+      // top: 137px;
+      z-index: 1;
+    }
+
+    img:nth-child(2) {
+      position: absolute;
+      width: 177.84px;
+      height: 148.16px;
+      left: 198.16px;
+      top: 14.84px;
+      z-index: 0;
+    }
+
+    img:nth-child(3) {
+      position: absolute;
+      width: 127.86px;
+      height: 106.58px;
+      left: 198.16px;
+      top: 64.02px;
+      z-index: 2;
+    }
+  }
+
+  .hero-text {
+    position: absolute;
+    width: 327px;
+    height: 171px; // sum of h1 + p + btn heights (64 + 75 + 32 roughly)
+    left: 24px;
+    top: 236px;
+    z-index: 2;
+
+    h1 {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 32px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #000;
+      margin: 0;
+      height: 64px; // fixed height from design
+    }
+
+    p {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #000;
+      margin: 0;
+      height: 75px; // fixed height
+      margin-top: 10px; // optional spacing between h1 and p
+    }
+
+    .primary-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 327px;
+      height: 71px;
+      margin-top: 32px; // spacing after paragraph
+      background: #8A2BE2;
+      border-radius: 4px;
+      color: #fff;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+/* === Desktop (unchanged) === */
+@media (min-width: 768px) {
+  .hero {
+    width: 768px;
+    padding-top: 50px;
+
+    .hero-images {
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-text {
+      width: 768px;
+      margin-top: 500px;
+
+      h1 {
+        font-size: 36px;
+      }
+    }
+  }
+
+  .books {
+    width: 768px;
+
+    .books-grid {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .site-header .main-nav {
+    nav ul {
+      margin: 0;
+    }
+  }
+}

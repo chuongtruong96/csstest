@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  overflow-x: hidden; // keep this
+}
+
+.page-container {
+  width: 100%;         // fill parent
+  max-width: 375px;    // cap at mobile artboard size
+  margin: 0 auto;      // center if narrower than screen
+  box-sizing: border-box;
+  padding: 0 20px;     // optional: some side padding so nothing touches the edges
+}
