@@ -1,36 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Trading Landing Page</title>
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/books.css" />
-  <link rel="stylesheet" href="../css/page.css" />
-
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/page.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 
 <body>
   <div class="page-container">
     <header class="site-header">
+      <!-- Top bar -->
       <div class="top-bar">
-        <span>Hello, Guest | Mon, 06 Jan 2025 12:11 GMT</span>
+        <span id="greeting-time">Hello, Guest | </span>
+        <div class="language-selector" onclick="toggleLanguageDropdown()">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjMDEyMTY5Ci8+CjxyZWN0IHk9IjUuMzMzMzMiIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjEwLjY2NjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjQ0UxMTI2Ci8+Cjwvc3ZnPgo=" alt="English" class="flag-icon" />
+          <span class="language-text">English</span>
+          <i class="fas fa-chevron-down dropdown-arrow"></i>
+          <ul class="language-dropdown" id="languageDropdown">
+            <li><a href="#" onclick="selectLanguage('en', 'English')">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjMDEyMTY5Ci8+CjxyZWN0IHk9IjUuMzMzMzMiIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjEwLjY2NjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjQ0UxMTI2Ci8+Cjwvc3ZnPgo=" alt="English" class="flag-icon" />
+              English
+            </a></li>
+            <li><a href="#" onclick="selectLanguage('es', 'Español')">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQUEwMDAwIi8+CjxyZWN0IHk9IjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjRkZEOTAwIi8+Cjwvc3ZnPgo=" alt="Español" class="flag-icon" />
+              Español
+            </a></li>
+            <li><a href="#" onclick="selectLanguage('fr', 'Français')">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgiIGhlaWdodD0iMTYiIGZpbGw9IiMwMDIzOTUiLz4KPHJlY3QgeD0iOCIgd2lkdGg9IjgiIGhlaWdodD0iMTYiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRUQyOTM5Ci8+Cjwvc3ZnPgo=" alt="Français" class="flag-icon" />
+              Français
+            </a></li>
+          </ul>
+        </div>
       </div>
-      <div class="main-nav">
+
+      <!-- Mobile nav -->
+      <div class="main-nav mobile">
+        <div class="logo">LOGO</div>
+        <button class="burger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Desktop nav -->
+      <div class="main-nav desktop">
         <div class="logo">LOGO</div>
         <nav>
           <ul>
-            <li><a href="#">Course Platform</a></li>
-            <li><a href="#">Education</a></li>
-            <li><a href="#">Information</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Course Platform <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Trading Basics</a></li>
+                <li><a href="#">Advanced Strategies</a></li>
+                <li><a href="#">Market Analysis</a></li>
+                <li><a href="#">Risk Management</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Education <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Video Tutorials</a></li>
+                <li><a href="#">Webinars</a></li>
+                <li><a href="#">E-books</a></li>
+                <li><a href="#">Certification</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Information <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Market News</a></li>
+                <li><a href="#">Economic Calendar</a></li>
+                <li><a href="#">Trading Tools</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <div class="actions">
-          <button class="login-btn">Login</button>
-          <button class="open-account-btn">Open an account</button>
-          <select class="lang-select">
-            <option>English</option>
-          </select>
+          <button class="login-btn" onclick="openLoginModal()">Login</button>
+          <button class="open-account-btn" onclick="openRegisterModal()">Open an account</button>
         </div>
       </div>
     </header>
@@ -43,32 +97,81 @@
           <img src="assets/images/Phone.png" alt="Phone screen" />
         </div>
         <div class="hero-text">
-          <h1>Trading Success Is What You Know</h1>
+          <h1 class="fit-text">Trading Success Is What You Know</h1>
           <p>Learn the keys to choosing the top currencies, stocks, indices, and commodities</p>
-          <a href="#" class="primary-btn">Start your journey</a>
+          <a href="#" class="primary-btn"><span>Start your journey</span></a>
         </div>
       </section>
 
-      <section class="books">
-        <h2>Level up your Trading Game</h2>
-        <p class="subtitle">Own Your Tomorrow</p>
-
-        <div class="packages">
-          <div class="book-card">
-            <img src="assets/images/turtle.png" alt="Turtle" />
-          </div>
-          <div class="book-card">
-            <img src="assets/images/whale.png" alt="Whale" />
-          </div>
-          <div class="book-card">
-            <img src="assets/images/shark.png" alt="Shark" />
-          </div>
+      <!-- Books elements positioned absolutely relative to main -->
+      <h2 class="books-heading">Level up your trading Game</h2>
+      <div class="books-purple-dot"></div>
+      <p class="books-subtitle">Own Your Tomorrow</p>
+      <div class="books-packages">
+        <div class="book-card">
+          <img src="assets/images/turtle.png" alt="Turtle" />
         </div>
-
-        <a href="#" class="primary-btn">Choose Subscription</a>
-        <p class="footer-tagline">Your Knowledge is Your Success.</p>
-      </section>
+        <div class="book-card">
+          <img src="assets/images/whale.png" alt="Whale" />
+        </div>
+        <div class="book-card">
+          <img src="assets/images/shark.png" alt="Shark" />
+        </div>
+      </div>
+      <a href="#" class="books-btn">Choose Subscription</a>
+      <p class="books-tagline">Your Knowledge is Your Success.</p>
     </main>
   </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoginModal()">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" name="password" required>
+        </div>
+        <button type="submit" class="modal-btn">Login</button>
+        <p class="modal-link">Don't have an account? <a href="#" onclick="switchToRegister()">Register here</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeRegisterModal()">&times;</span>
+      <h2>Create Account</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="registerName">Full Name:</label>
+          <input type="text" id="registerName" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="registerEmail">Email:</label>
+          <input type="email" id="registerEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Password:</label>
+          <input type="password" id="registerPassword" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <button type="submit" class="modal-btn">Create Account</button>
+        <p class="modal-link">Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
+
 </html>
