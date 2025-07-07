@@ -328,22 +328,22 @@ body {
   }
   .site-header .main-nav .logo .logo-ellipse {
     position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 0;
-    top: 3px;
+    width: 32.78688px;
+    height: 32.78688px;
+    left: 0px;
+    top: 7.21px;
     background: #A154F2;
     opacity: 0.2;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 4% 75%, 96% 75%);
     z-index: 1;
   }
   .site-header .main-nav .logo::before {
     content: "";
     position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 18px;
-    top: 0;
+    width: 26.2295px;
+    height: 26.2295px;
+    left: 22.3px;
+    top: 0px;
     background: #A154F2;
     opacity: 0.2;
     z-index: 1;
@@ -351,10 +351,10 @@ body {
   .site-header .main-nav .logo::after {
     content: "";
     position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 32px;
-    top: 3px;
+    width: 26.2295px;
+    height: 26.2295px;
+    left: 41.31px;
+    top: 7.87px;
     background: #A154F2;
     opacity: 0.2;
     border-radius: 50%;
