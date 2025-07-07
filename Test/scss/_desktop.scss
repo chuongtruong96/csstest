@@ -74,7 +74,8 @@
       position: absolute;
       width: 131px;
       height: 32px;
-      right: 191px;
+      right: 322px;
+      /* Corrected from Figma */
       top: 8px;
       border-radius: 8px;
       background: transparent;
@@ -89,7 +90,8 @@
       .flag-icon {
         width: 24px;
         height: 16px;
-        background: url(image.png);
+        background: url('/assets/images/flag-uk.png') no-repeat center center;
+        background-size: contain;
         flex: none;
         order: 0;
         flex-grow: 0;
@@ -115,34 +117,27 @@
         flex: none;
         order: 2;
         flex-grow: 0;
-        color: #FFFFFF;
         position: relative;
 
         &::before {
-          content: '';
+          content: "";
           position: absolute;
-          left: 29.17%;
-          right: 29.17%;
-          top: 41.67%;
-          bottom: 37.5%;
-          background: #FFFFFF;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0%;
-          right: 0%;
-          top: 0%;
-          bottom: 0%;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 5px solid #FFFFFF;
+          transform: translate(-50%, -50%);
         }
       }
 
       .language-dropdown {
         position: absolute;
-        top: 0;
-        left: 100%;
-        margin-left: 8px;
+        top: 100%;
+        left: 0;
+        margin-top: 8px;
         background: #FFFFFF;
         box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
@@ -150,7 +145,7 @@
         min-width: 150px;
         opacity: 0;
         visibility: hidden;
-        transform: translateX(-10px);
+        transform: translateY(-10px);
         transition: all 0.3s ease;
         z-index: 1000;
         list-style: none;
@@ -159,7 +154,7 @@
         &.active {
           opacity: 1;
           visibility: visible;
-          transform: translateX(0);
+          transform: translateY(0);
         }
 
         li {
@@ -218,20 +213,22 @@
 
         /* Polygon 1 (Triangle) - using logo-ellipse div - Figma: left: 191px, top: 78px */
         .logo-ellipse {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 0px;
-  top: 11px;
-  background: #A154F2;
-  opacity: 0.2;
-  clip-path: polygon(
-    50% 0%,    /* top point */
-    4% 75%,    /* bottom left inset + clipped height */
-    96% 75%    /* bottom right inset + clipped height */
-  );
-  z-index: 1;
-}
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          left: 0px;
+          top: 11px;
+          background: #A154F2;
+          opacity: 0.2;
+          clip-path: polygon(50% 0%,
+              /* top point */
+              4% 75%,
+              /* bottom left inset + clipped height */
+              96% 75%
+              /* bottom right inset + clipped height */
+            );
+          z-index: 1;
+        }
 
         /* Rectangle 42827 (Square) - using ::before - Figma: left: 225px, top: 67px */
         &::before {

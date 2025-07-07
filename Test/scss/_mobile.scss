@@ -1,3 +1,5 @@
+@media(max-width: 375px) {
+
 /* ========================================
    MOBILE LAYOUT (Default - up to 767px)
 ======================================== */
@@ -518,5 +520,6 @@
 }
 
 .books-purple-dot {
-  display: none;
+    display: none;
+  }
 }
