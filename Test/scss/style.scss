@@ -23,909 +23,189 @@ body {
 }
 
 /* ========================================
-   MOBILE LAYOUT (Default - up to 767px)
+   INTERACTIVE COMPONENTS (All Devices)
 ======================================== */
 
-/* === Background Gradient (Mobile) === */
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 1434px;
-  height: 898px;
-  left: -546px;
-  top: -55px;
-  background: radial-gradient(50% 50% at 50% 50%, #F3F3F3 31.25%, rgba(250, 255, 248, 0) 100%);
-  z-index: -1;
-}
+/* === Dropdown Styles === */
+.dropdown {
+  position: relative;
 
-/* === Mobile Header === */
-.site-header {
-
-  // Mobile Top bar (Hello Guest section)
-  .top-bar {
-    position: relative;
-    width: 100%;
-    max-width: 375px;
-    height: 24px;
-    margin: 0 auto;
-    background: linear-gradient(to right, #0E1518 70.27%, #8A2BE2 70.27%);
+  &-toggle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0;
+    gap: 5px;
 
-    span {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 10px;
-      line-height: 12px;
-      color: #FFFFFF;
-      padding-left: 24px;
-    }
-
-    &::after {
-      content: 'English ▼';
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 10px;
-      line-height: 12px;
-      color: #FFFFFF;
-      padding-right: 24px;
-    }
-  }
-
-  // Mobile Main navigation
-  .main-nav {
-    position: relative;
-    width: 100%;
-    max-width: 375px;
-    height: 52px;
-    margin: 0 auto;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 22px;
-
-    .logo {
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      color: #A154F2;
-    }
-
-    // Mobile navigation (default)
-    &.mobile {
-      display: flex;
-
-      .burger {
-        background: none;
-        border: none;
-        cursor: pointer;
-        width: 24px;
-        height: 24px;
-        position: relative;
-
-        span {
-          display: block;
-          position: absolute;
-          background: #8A2BE2;
-          border-radius: 1px;
-          transition: all 0.3s ease;
-
-          &:nth-child(1) {
-            width: 22px;
-            height: 3px;
-            top: 4px;
-            left: 1px;
-          }
-
-          &:nth-child(2) {
-            width: 17px;
-            height: 3px;
-            top: 10px;
-            left: 1px;
-          }
-
-          &:nth-child(3) {
-            width: 11px;
-            height: 3px;
-            top: 16px;
-            left: 1px;
-          }
-        }
-      }
-    }
-
-    // Desktop navigation (hidden on mobile)
-    &.desktop {
-      display: none;
-    }
-  }
-}
-
-/* === Mobile Hero Section === */
-.hero {
-  position: relative;
-  width: 375px;
-  height: 608px;
-  margin: 0 auto;
-
-  // Mobile Hero Images Group (Group 1837)
-  .hero-images {
-    position: absolute;
-    width: 375px;
-    height: 268.24px;
-    left: 1px;
-    top: 137px;
-
-    // Laptop image
-    img:nth-child(1) {
-      position: absolute;
-      width: 321.89px;
-      height: 268.24px;
-      left: 0px;
-      top: 0px;
-      z-index: 1;
-    }
-
-    // Tablet image
-    img:nth-child(2) {
-      position: absolute;
-      width: 177.84px;
-      height: 148.16px;
-      left: 197.16px;
-      top: 14.84px;
-      z-index: 0;
-    }
-
-    // Phone image
-    img:nth-child(3) {
-      position: absolute;
-      width: 127.86px;
-      height: 106.58px;
-      left: 197.16px;
-      top: 64.02px;
-      z-index: 2;
-    }
-  }
-
-  // Mobile Hero Text Content
-  .hero-text {
-    h1 {
-      position: absolute;
-      width: 327px;
-      height: 64px;
-      left: 24px;
-      top: 373px;
-      font-family: 'Mulish', sans-serif;
-      font-style: normal;
-      font-weight: 900;
-      font-size: 32px;
-      line-height: 32px;
-      text-align: center;
-      text-transform: capitalize;
-      color: #000000;
-      margin: 0;
-    }
-
-    h1.fit-text {
-      letter-spacing: -4px;
-    }
-
-    p {
-      position: absolute;
-      width: 327px;
-      height: 75px;
-      left: 24px;
-      top: 445px;
-      font-family: 'Manrope', sans-serif;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 25px;
-      text-align: center;
-      color: #000000;
-      margin: 0;
-    }
-
-    .primary-btn {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 24px 48px 22px;
-      gap: 12px;
-      position: absolute;
-      width: 327px;
-      height: 71px;
-      left: 24px;
-      top: 537px;
-      background: #8A2BE2;
-      border-radius: 4px;
-      text-decoration: none;
-      cursor: pointer;
-
-      span {
-        width: 159px;
-        height: 25px;
-        font-family: 'Manrope', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 25px;
-        text-align: center;
-        color: #FFFFFF;
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-      }
-
-      &:hover {
-        opacity: 0.9;
-      }
-    }
-  }
-}
-
-/* === Mobile Books Section === */
-.books-heading {
-  position: relative;
-  width: 327px;
-  height: 64px;
-  margin: 0 auto;
-  margin-top: 40px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 32px;
-  text-align: center;
-  color: #252C21;
-  
-  // Purple dot after the heading
-  &::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #BB74FD;
-    border-radius: 25px;
-    right: -12px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-.books-subtitle {
-  width: 217px;
-  height: 30px;
-  margin: 10px auto 0 auto;
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  text-transform: capitalize;
-  color: #252C21;
-}
-
-.books-packages {
-  position: relative;
-  width: 498.53px;
-  height: 197px;
-  margin: 15px auto 0 auto;
-  left: -24px;
-
-  .book-card {
-    position: absolute;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    img {
-      display: block;
-      width: 257.31px;
-      height: 192.98px;
-      object-fit: cover;
+    i {
+      font-size: 12px;
       transition: transform 0.3s ease;
     }
+  }
 
-    // Turtle (first book)
-    &:nth-child(1) {
-      left: -4px;
-      top: 4.02px;
-      z-index: 1;
-
-      &:hover img {
-        transform: scale(1.1);
-      }
+  &.active {
+    .dropdown-toggle i {
+      transform: rotate(180deg);
     }
 
-    // Whale (second book) - center, highest z-index
-    &:nth-child(2) {
-      left: 105px;
-      top: 0px;
-      z-index: 2;
-
-      &:hover img {
-        transform: scale(1.1);
-      }
-    }
-
-    // Shark (third book)
-    &:nth-child(3) {
-      left: 241.22px;
-      top: 4.02px;
-      z-index: 1;
-
-      &:hover img {
-        transform: scale(1.1);
-      }
+    .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
   }
-}
 
-.books-btn {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 36px;
-  gap: 8px;
-  width: 255px;
-  height: 57px;
-  margin: 40px auto 0 auto;
-  background: #8A2BE2;
-  border-radius: 4px;
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 25px;
-  text-align: center;
-  color: #F3F3F3;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    opacity: 0.9;
-  }
-}
-
-.books-tagline {
-  width: 304px;
-  height: 27px;
-  margin: 32px auto 0 auto;
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 27px;
-  text-align: center;
-  color: #252C21;
-}
-
-.books-purple-dot {
-  display: none; // Hidden on mobile
-}
-
-/* ========================================
-   DESKTOP LAYOUT (768px and above)
-======================================== */
-
-@media (min-width: 768px) {
-
-  /* === Desktop Background Gradient === */
-  .hero::before {
-    width: 100%;
-    height: 100%;
+  &-menu {
+    position: absolute;
+    top: 100%;
     left: 0;
-    top: 0;
-    background: radial-gradient(50% 50% at 50% 50%, #F3F3F3 31.25%, rgba(250, 255, 248, 0) 100%);
-  }
-
-  /* === Desktop Header === */
-  // Desktop top-bar styles are handled in custom.scss for pixel-perfect Figma implementation
-  // Desktop navigation is handled here to avoid duplication
-  
-  .site-header {
-    position: relative;
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    filter: drop-shadow(0px 4px 32px rgba(0, 0, 0, 0.1));
-
-    // Desktop Main navigation
-    .main-nav {
-      position: relative;
-      width: 100%;
-      height: 98px;
-      max-width: none;
-      background: #FFFFFF;
-      box-shadow: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 191px;
-
-      .logo {
-        position: absolute;
-        width: 103px;
-        height: 61px;
-        left: 191px;
-        top: 15px;
-        font-family: 'Open Sans', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 33px;
-        color: #A154F2;
-      }
-
-      // Hide mobile navigation
-      &.mobile {
-        display: none;
-      }
-
-      // Show desktop navigation
-      &.desktop {
-        display: flex;
-        position: relative;
-        width: 100%;
-        height: 98px;
-        background: #FFFFFF;
-        padding: 0;
-
-        nav {
-          position: absolute;
-          width: 431px;
-          height: 32px;
-          left: 455px;
-          top: 33px;
-
-          ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            width: 100%;
-            height: 100%;
-
-            li {
-              a {
-                font-family: 'Roboto', sans-serif;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 32px;
-                text-align: center;
-                color: #000000;
-                text-decoration: none;
-
-                &:hover {
-                  color: $primary-color;
-                }
-              }
-            }
-          }
-        }
-
-        .actions {
-          position: absolute;
-          right: 191px;
-          top: 14px;
-          display: flex;
-          align-items: center;
-          gap: 32px;
-
-          .login-btn {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 24px 48px 22px;
-            gap: 12px;
-            width: 145px;
-            height: 71px;
-            border: 2px solid #8A2BE2;
-            border-radius: 4px;
-            background: transparent;
-            cursor: pointer;
-
-            font-family: 'Manrope', sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 25px;
-            text-align: center;
-            color: #000000;
-
-            &:hover {
-              background: $primary-color;
-              color: #fff;
-            }
-          }
-
-          .open-account-btn {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 24px 48px 22px;
-            gap: 12px;
-            width: 244px;
-            height: 71px;
-            background: #8A2BE2;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-
-            font-family: 'Manrope', sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 25px;
-            text-align: center;
-            color: #FFFFFF;
-
-            &:hover {
-              opacity: 0.9;
-            }
-          }
-
-          .lang-select {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-
-  /* === Desktop Hero Section === */
-  .hero {
-    position: relative;
-    width: 100%;
-    max-width: 1920px;
-    height: 1049px;
-    margin: 0 auto;
-
-    // Desktop Hero Images Group (Group 1839)
-    .hero-images {
-      position: absolute;
-      width: 1089px;
-      height: 778.97px;
-      left: 68px;
-      top: 48px;
-
-      // Laptop image (Desktop)
-      img:nth-child(1) {
-        position: absolute;
-        width: 934.76px;
-        height: 778.97px;
-        left: 0px;
-        top: 0px;
-        z-index: 1;
-      }
-
-      // Tablet image (Desktop)
-      img:nth-child(2) {
-        position: absolute;
-        width: 516.46px;
-        height: 430.25px;
-        left: 572.54px; // 640.54 - 68 (group offset)
-        top: 43.1px; // 313.12 - 270.02 (group offset)
-        z-index: 0;
-      }
-
-      // Phone image (Desktop)
-      img:nth-child(3) {
-        position: absolute;
-        width: 371.31px;
-        height: 309.51px;
-        left: 572.54px; // 640.54 - 68 (group offset)
-        top: 185.91px; // 455.93 - 270.02 (group offset)
-        z-index: 2;
-      }
-    }
-
-    // Desktop Hero Text Content
-    .hero-text {
-      h1 {
-        position: absolute;
-        width: 582px;
-        height: 128px;
-        left: 1102px;
-        top: 269px;
-        font-family: 'Mulish', sans-serif;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 64px;
-        line-height: 64px;
-        text-transform: capitalize;
-        color: #000000;
-        margin: 0;
-        text-align: left;
-        letter-spacing: -1.5px;
-        font-stretch: condensed;
-      }
-
-      p {
-        position: absolute;
-        width: 389px;
-        height: 50px;
-        left: 1102px;
-        top: 421px;
-        font-family: 'Manrope', sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 25px;
-        color: #000000;
-        margin: 0;
-        text-align: left;
-        letter-spacing: -0.5px;
-      }
-
-      .primary-btn {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 24px 48px 22px;
-        gap: 12px;
-        position: absolute;
-        width: 255px;
-        height: 71px;
-        left: 1102px;
-        top: 495px;
-        background: #8A2BE2;
-        border-radius: 4px;
-        text-decoration: none;
-        cursor: pointer;
-
-        span {
-          width: 159px;
-          height: 25px;
-          font-family: 'Manrope', sans-serif;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 25px;
-          text-align: center;
-          color: #FFFFFF;
-          flex: none;
-          order: 0;
-          flex-grow: 0;
-        }
-
-        &:hover {
-          opacity: 0.9;
-        }
-      }
-    }
-  }
-
-  /* === PIXEL PERFECT Desktop Books Section (Relative to Main) === */
-  
-  // Main container setup for absolute positioning
-  main {
-    position: relative;
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-  }
-
-  // PIXEL PERFECT heading positioning (Group 1534)
-  // Figma: top: 1255px, minus header height (76px) = 1109px relative to main
-  .books-heading {
-    position: absolute;
-    width: 869px;
-    height: 80px;
-    left: 511px;
-    top: 1033px; // 1255px - 76px (header height)
-    font-family: 'Mulish', sans-serif;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 64px;
-    line-height: 80px;
-    text-align: center;
-    color: #252C21;
-    margin: 0;
-    z-index: 5;
-    letter-spacing: -2px;
-white-space: nowrap;
-
-    // Remove mobile purple dot
-    &::after {
-      display: none;
-    }
-  }
-
-  // PIXEL PERFECT purple dot positioning (Rectangle 42788)
-  // Figma: top: 1309px, minus header height (76px) = 1163px relative to main
-  .books-purple-dot {
-    display: block;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 1387px;
-    top: 1087px; // 1309px - 76px (header height)
-    background: #BB74FD;
-    border-radius: 25px;
-    z-index: 10;
-    margin-left: 40px;
-  }
-
-  // PIXEL PERFECT subtitle positioning
-  // Figma: top: 1338px, minus header height (76px) = 1192px relative to main
-  .books-subtitle {
-    position: absolute;
-    width: 235px;
-    height: 33px;
-    left: 842px;
-    top: 1116px; // 1338px - 76px (header height)
-    font-family: 'Manrope', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 33px;
-    text-align: center;
-    text-transform: capitalize;
-    color: #252C21;
-    margin: 0;
-    z-index: 5;
-  }
-
-  // PIXEL PERFECT packages positioning
-  // Figma: top: 1330px, minus header height (76px) = 1184px relative to main
-  .books-packages {
-    position: absolute;
-    width: 1775px;
-    height: 538px;
-    left: 122px;
-    top: 1108px; // 1330px - 76px (header height)
-    // background: #F3F3F3;
-    overflow: visible; // Allow books to grow outside container
-    margin: 0;
-    transform: none;
-    z-index: 1;
-
-    .book-card {
-      position: absolute;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: inherit;
-      }
-
-      // Turtle (first book) - PIXEL PERFECT Normal state
-      &:nth-child(1) {
-        width: 916.13px;
-        height: 687.1px;
-        left: 0px;
-        top: 14.31px;
-        z-index: 1;
-        transform-origin: center center;
-
-        // Turtle grows on hover - PIXEL PERFECT (grows from center)
-        &:hover {
-          width: 1162px;
-          height: 871px;
-          left: -122.94px; // 0 - (1162 - 916.13) / 2
-          top: -77.64px;   // 14.31 - (871 - 687.1) / 2
-          z-index: 3;
-        }
-      }
-
-      // Whale (second book) - PIXEL PERFECT Normal state  
-      &:nth-child(2) {
-        width: 916.13px;
-        height: 687.1px;
-        left: 379.33px;
-        top: 0px;
-        z-index: 2;
-        transform-origin: center center;
-
-        // Whale grows on hover - PIXEL PERFECT (grows from center)
-        &:hover {
-          width: 1076px;
-          height: 808px;
-          left: 299.40px;  // 379.33 - (1076 - 916.13) / 2
-          top: -60.45px;   // 0 - (808 - 687.1) / 2
-          z-index: 3;
-        }
-      }
-
-      // Shark (third book) - PIXEL PERFECT Normal state
-      &:nth-child(3) {
-        width: 916.13px;
-        height: 687.1px;
-        left: 858.87px;
-        top: 14.31px;
-        z-index: 1;
-        transform-origin: center center;
-
-        // Shark grows on hover - PIXEL PERFECT (grows from center)
-        &:hover {
-          width: 1156px;
-          height: 866px;
-          left: 738.94px; // 858.87 - (1156 - 916.13) / 2
-          top: -75.14px;  // 14.31 - (866 - 687.1) / 2
-          z-index: 3;
-        }
-      }
-
-      // When one book is hovered, others shrink slightly
-      &:not(:hover) {
-        .books-packages:hover & {
-          opacity: 0.8;
-          transform: scale(0.95);
-        }
-      }
-    }
-  }
-
-  // PIXEL PERFECT button positioning
-  // Figma: top: 1988px, minus header height (76px) = 1842px relative to main
-  .books-btn {
-    position: absolute;
-    width: 280px;
-    height: 71px;
-    left: 820px;
-    top: 1766px; // 1988px - 76px (header height)
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 36px;
-    gap: 8px;
-    background: #8A2BE2;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
+    padding: 8px 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+
+    li {
+      margin: 0;
+
+      a {
+        display: block;
+        padding: 12px 16px;
+        color: #000000;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #f5f5f5;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+/* === Modal Styles === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+
+  &-content {
+    background-color: #FFFFFF;
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  &-btn {
+    width: 100%;
+    padding: 16px;
+    background: $primary-color;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    font-family: "Manrope", sans-serif;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 25px;
-    text-align: center;
-    color: #F3F3F3;
-    text-decoration: none;
+    font-size: 16px;
     cursor: pointer;
     transition: opacity 0.3s ease;
-    margin: 0;
-    z-index: 5;
+    margin-bottom: 20px;
 
     &:hover {
       opacity: 0.9;
     }
   }
 
-  // PIXEL PERFECT footer tagline positioning
-  // Figma: top: 2088px, minus header height (76px) = 1942px relative to main
-  .books-tagline {
-    position: absolute;
-    width: 358px;
-    height: 33px;
-    left: 777px;
-    top: 1866px; // 2088px - 76px (header) - 76px (browser chrome)
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
+  &-link {
     text-align: center;
-    color: #252C21;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #666;
     margin: 0;
-    z-index: 5;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  h2 {
+    margin-bottom: 30px;
+    color: #000000;
+    font-family: "Mulish", sans-serif;
+    font-size: 24px;
+    text-align: center;
   }
 }
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #000000;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+}
+
+/* ========================================
+   IMPORT MOBILE & DESKTOP STYLES
+======================================== */
+
+@import 'mobile';
+@import 'desktop';
