@@ -1,0 +1,770 @@
+/* ========================================
+   DESKTOP LAYOUT (768px and above)
+======================================== */
+
+@media (min-width: 768px) {
+
+  /* === Desktop Background Gradient === */
+  .hero::before {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: radial-gradient(50% 50% at 50% 50%, #F3F3F3 31.25%, rgba(250, 255, 248, 0) 100%);
+  }
+
+  @media (min-width: 992px) {
+
+    /* === Desktop Header === */
+    .site-header {
+      position: relative;
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto;
+      filter: drop-shadow(0px 4px 32px rgba(0, 0, 0, 0.1));
+
+      /* Desktop Top Bar */
+      .top-bar {
+        position: relative;
+        width: 100%;
+        height: 48px;
+        left: 0px;
+        top: 0px;
+        max-width: none;
+        margin: 0 auto;
+        background: #8A2BE2;
+
+        /* Black section overlay */
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0%;
+          right: 17.58%;
+          top: 0%;
+          bottom: 0%;
+          background: #000000;
+          z-index: 1;
+        }
+      }
+
+      /* Hello, Guest text */
+      #greeting-time {
+        position: absolute;
+        left: 10%;
+        right: 25%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF;
+        z-index: 2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* Desktop Language Selector - Frame 1795 */
+      .language-selector {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 4px 12px;
+        gap: 6px;
+        position: absolute;
+        width: 131px;
+        height: 32px;
+        right: 191px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 8px;
+        background: transparent;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 2;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .flag-icon {
+          width: 24px;
+          height: 16px;
+          background: url('/assets/images/flag-uk.png') no-repeat center center;
+          background-size: contain;
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+        }
+
+        .language-text {
+          width: 47px;
+          height: 16px;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 16px;
+          color: #FFFFFF;
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+        }
+
+        .dropdown-arrow {
+          width: 24px;
+          height: 24px;
+          flex: none;
+          order: 2;
+          flex-grow: 0;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid #FFFFFF;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        .language-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          margin-top: 8px;
+          background: #FFFFFF;
+          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          padding: 8px 0;
+          min-width: 150px;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          transition: all 0.3s ease;
+          z-index: 1000;
+          list-style: none;
+          margin: 0;
+
+          &.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+
+          li {
+            margin: 0;
+
+            a {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              padding: 12px 16px;
+              color: #000000;
+              text-decoration: none;
+              font-family: "Roboto", sans-serif;
+              font-size: 14px;
+              transition: background-color 0.3s ease;
+
+              &:hover {
+                background-color: #f5f5f5;
+                color: #8A2BE2;
+              }
+
+              .flag-icon {
+                width: 20px;
+                height: 14px;
+              }
+            }
+          }
+        }
+      }
+
+      .main-nav {
+        position: relative;
+        width: 100%;
+        height: 98px;
+        max-width: none;
+        background: #FFFFFF;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 191px;
+
+        .logo {
+          position: absolute;
+          width: 103px;
+          height: 61px;
+          left: 191px;
+          top: 19px;
+          /* 67px (from Figma) - 48px (top-bar height) = 19px */
+          font-family: "Open Sans", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 33px;
+          color: #A154F2;
+
+          /* Polygon 1 (Triangle) - using logo-ellipse div - Figma: left: 191px, top: 78px */
+          .logo-ellipse {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 0px;
+            top: 11px;
+            background: #A154F2;
+            opacity: 0.2;
+            clip-path: polygon(50% 0%,
+                /* top point */
+                4% 75%,
+                /* bottom left inset + clipped height */
+                96% 75%
+                /* bottom right inset + clipped height */
+              );
+            z-index: 1;
+          }
+
+          /* Rectangle 42827 (Square) - using ::before - Figma: left: 225px, top: 67px */
+          &::before {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            left: 34px;
+            /* 225px - 191px (relative to logo container) */
+            top: 0px;
+            /* 67px - 67px (relative to logo container) */
+            background: #A154F2;
+            opacity: 0.2;
+            z-index: 1;
+          }
+
+          /* Ellipse 43 (Circle) - using ::after - Figma: left: 254px, top: 79px */
+          &::after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            left: 63px;
+            /* 254px - 191px (relative to logo container) */
+            top: 12px;
+            /* 79px - 67px (relative to logo container) */
+            background: #A154F2;
+            opacity: 0.2;
+            border-radius: 50%;
+            z-index: 1;
+          }
+
+          /* LOGO Text - Figma: left: 216px, top: 80px */
+          .logo-text {
+            position: absolute;
+            width: 70px;
+            height: 33px;
+            left: 25px;
+            /* 216px - 191px (relative to logo container) */
+            top: 13px;
+            /* 80px - 67px (relative to logo container) */
+            font-family: "Open Sans", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 33px;
+            color: #A154F2;
+            z-index: 2;
+          }
+        }
+
+        &.mobile {
+          display: none;
+        }
+
+        &.desktop {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 98px;
+          background: #FFFFFF;
+          padding: 0;
+
+          nav {
+            position: absolute;
+            width: 431px;
+            height: 32px;
+            left: 455px;
+            top: 33px;
+
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              align-items: center;
+              gap: 40px;
+              width: 100%;
+              height: 100%;
+
+              li {
+                a {
+                  font-family: "Roboto", sans-serif;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 18px;
+                  line-height: 32px;
+                  text-align: center;
+                  color: #000000;
+                  text-decoration: none;
+
+                  &:hover {
+                    color: #8A2BE2;
+                  }
+                }
+              }
+            }
+          }
+
+          .actions {
+            position: absolute;
+            right: 191px;
+            top: 14px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+
+            .login-btn {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              padding: 24px 48px 22px;
+              gap: 12px;
+              width: 145px;
+              height: 71px;
+              border: 2px solid #8A2BE2;
+              border-radius: 4px;
+              background: transparent;
+              cursor: pointer;
+              font-family: "Manrope", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 25px;
+              text-align: center;
+              color: #000000;
+
+              &:hover {
+                background: #8A2BE2;
+                color: #fff;
+              }
+            }
+
+            .open-account-btn {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              padding: 24px 48px 22px;
+              gap: 12px;
+              width: 244px;
+              height: 71px;
+              background: #8A2BE2;
+              border-radius: 4px;
+              border: none;
+              cursor: pointer;
+              font-family: "Manrope", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 25px;
+              text-align: center;
+              color: #FFFFFF;
+
+              &:hover {
+                opacity: 0.9;
+              }
+            }
+
+            .logout-btn {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              padding: 24px 48px 22px;
+              gap: 12px;
+              width: 145px;
+              height: 71px;
+              background: #dc3545;
+              border-radius: 4px;
+              border: none;
+              cursor: pointer;
+              font-family: "Manrope", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 25px;
+              text-align: center;
+              color: #FFFFFF;
+
+              &:hover {
+                opacity: 0.9;
+              }
+            }
+
+            .lang-select {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* === Desktop Hero Section === */
+  .hero {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 1049px;
+    margin: 0 auto;
+
+    .hero-images {
+      position: absolute;
+      width: 1089px;
+      height: 778.97px;
+      left: 68px;
+      top: 48px;
+
+      img:nth-child(1) {
+        position: absolute;
+        width: 934.76px;
+        height: 778.97px;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+      }
+
+      img:nth-child(2) {
+        position: absolute;
+        width: 516.46px;
+        height: 430.25px;
+        left: 572.54px;
+        top: 43.1px;
+        z-index: 0;
+      }
+
+      img:nth-child(3) {
+        position: absolute;
+        width: 371.31px;
+        height: 309.51px;
+        left: 572.54px;
+        top: 185.91px;
+        z-index: 2;
+      }
+    }
+
+    .hero-text {
+      h1 {
+        position: absolute;
+        width: 582px;
+        height: 128px;
+        left: 1102px;
+        top: 269px;
+        font-family: "Mulish", sans-serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 64px;
+        text-transform: capitalize;
+        color: #000000;
+        margin: 0;
+        text-align: left;
+        letter-spacing: -1.5px;
+        font-stretch: condensed;
+      }
+
+      p {
+        position: absolute;
+        width: 389px;
+        height: 50px;
+        left: 1102px;
+        top: 421px;
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        color: #000000;
+        margin: 0;
+        text-align: left;
+        letter-spacing: -0.5px;
+      }
+
+      .primary-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 24px 48px 22px;
+        gap: 12px;
+        position: absolute;
+        width: 255px;
+        height: 71px;
+        left: 1102px;
+        top: 495px;
+        background: #8A2BE2;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+
+        span {
+          width: 159px;
+          height: 25px;
+          font-family: "Manrope", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 25px;
+          text-align: center;
+          color: #FFFFFF;
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+        }
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  /* === Desktop Books Section === */
+  main {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  .books-heading {
+    position: absolute;
+    width: 869px;
+    height: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1033px;
+    font-family: "Mulish", sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 80px;
+    // text-align: center;
+    color: #252C21;
+    margin: 0;
+    z-index: 5;
+    letter-spacing: -2px;
+    white-space: nowrap;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .books-purple-dot {
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 1387px;
+    top: 1087px;
+    background: #BB74FD;
+    border-radius: 25px;
+    z-index: 10;
+    margin-left: 65px;
+  }
+
+  .books-subtitle {
+    position: absolute;
+    width: 235px;
+    height: 33px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1116px;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #252C21;
+    margin: 0;
+    z-index: 5;
+  }
+
+  .books-packages {
+    position: absolute;
+    width: 1775px;
+    height: 538px;
+    left: 122px;
+    top: 1108px;
+    overflow: visible;
+    margin: 0;
+    transform: none;
+    z-index: 1;
+
+    .book-card {
+      position: absolute;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: inherit;
+      }
+
+      &:nth-child(1) {
+        width: 916.13px;
+        height: 687.1px;
+        left: 0px;
+        top: 14.31px;
+        z-index: 1;
+        transform-origin: center center;
+
+        &:hover {
+          width: 1162px;
+          height: 871px;
+          left: -122.94px;
+          top: -77.64px;
+          z-index: 3;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 916.13px;
+        height: 687.1px;
+        left: 379.33px;
+        top: 0px;
+        z-index: 2;
+        transform-origin: center center;
+
+        &:hover {
+          width: 1076px;
+          height: 808px;
+          left: 299.4px;
+          top: -60.45px;
+          z-index: 3;
+        }
+      }
+
+      &:nth-child(3) {
+        width: 916.13px;
+        height: 687.1px;
+        left: 858.87px;
+        top: 14.31px;
+        z-index: 1;
+        transform-origin: center center;
+
+        &:hover {
+          width: 1156px;
+          height: 866px;
+          left: 738.94px;
+          top: -75.14px;
+          z-index: 3;
+        }
+      }
+    }
+  }
+
+  .books-btn {
+    position: absolute;
+    width: 280px;
+    height: 71px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1766px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    gap: 8px;
+    background: #8A2BE2;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #F3F3F3;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin: 0;
+    z-index: 5;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .books-tagline {
+    position: absolute;
+    width: 358px;
+    height: 33px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1866px;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    color: #252C21;
+    margin: 0;
+    z-index: 5;
+    white-space: nowrap;
+  }
+}
+
+/* ========================================
+   RESPONSIVE OVERRIDES
+======================================== */
+@media (min-width: 768px) and (max-width: 1919px) {
+  .site-header .top-bar {
+    width: 100vw;
+
+    &::before {
+      right: 17.58%;
+    }
+  }
+
+  .language-selector {
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 1920px) {
+  .site-header .top-bar {
+    width: 1920px;
+  }
+
+  .language-selector {
+    right: 191px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

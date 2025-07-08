@@ -1,0 +1,99 @@
+/* ========================================
+   CHART BACKGROUND STYLES
+======================================== */
+
+// Chart Variables
+$chart-opacity: 0.8; // Increased for visibility (was 0.08 from Figma)
+$chart-z-index: 1;
+
+/* ========================================
+   MOBILE - NO CHARTS (up to 767px)
+======================================== */
+@media (max-width: 767px) {
+  .chart-bg-1,
+  .chart-bg-2 {
+    display: none; // No charts on mobile per design
+  }
+}
+
+/* ========================================
+   DESKTOP CHART BACKGROUNDS (768px and above)
+======================================== */
+@media (min-width: 768px) {
+  .chart-bg-1 {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: $chart-opacity;
+    z-index: $chart-z-index;
+    pointer-events: none;
+    // Fully responsive dimensions and positioning
+    width: clamp(300px, 50vw, 961.52px);
+    height: clamp(175px, 29vw, 558.8px);
+    left: clamp(-50px, -3vw, -15px); // Responsive left position
+    top: clamp(100px, 15vh, 240px); // Responsive top position
+    background-image: url('../assets/images/chart1.png');
+  }
+
+  .chart-bg-2 {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: $chart-opacity;
+    z-index: $chart-z-index;
+    pointer-events: none;
+    // Fully responsive dimensions and positioning
+    width: clamp(300px, 50vw, 961.52px);
+    height: clamp(175px, 29vw, 558.8px);
+    left: clamp(40vw, 55vw, 960px); // Responsive left - always relative to viewport
+    top: clamp(-50px, -3vh, -8px); // Responsive top position
+    background-image: url('../assets/images/chart2.png');
+  }
+}
+
+/* ========================================
+   LARGE SCREENS - Fixed positioning (1200px+)
+======================================== */
+@media (min-width: 1200px) {
+  .chart-bg-1 {
+    width: 961.52px;
+    height: 558.8px;
+    left: -15px;
+    top: 340px;
+  }
+
+  .chart-bg-2 {
+    width: 961.52px;
+    height: 558.8px;
+    left: 960px;
+    top: -8px;
+  }
+}
+
+/* ========================================
+   CHART HOVER EFFECTS (Optional)
+======================================== */
+.hero:hover {
+  .chart-bg-1,
+  .chart-bg-2 {
+    opacity: $chart-opacity + 0.02;
+    transition: opacity 0.3s ease;
+  }
+}
+
+/* ========================================
+   CHART VISIBILITY UTILITIES
+======================================== */
+.chart-visible {
+  .chart-bg-1,
+  .chart-bg-2 {
+    opacity: $chart-opacity + 0.04;
+  }
+}
+
+.chart-hidden {
+  .chart-bg-1,
+  .chart-bg-2 {
+    opacity: 0;
+  }
+}
